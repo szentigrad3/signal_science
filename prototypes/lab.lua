@@ -258,7 +258,6 @@ data:extend(
       }
     }
   },
-    circuit_connector_sprites = circuit_connector_definitions["lab"].sprites,
     circuit_wire_max_distance = 0.9
     module_specification =
     {

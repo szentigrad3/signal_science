@@ -1,0 +1,13 @@
+{
+    "name":  "signal_science",
+    "version":  "1.0.0",
+    "factorio_version":  "1.0",
+    "title":  "SubTerra",
+    "author":  "Szentigrade",
+    "homepage":  "",
+    "contact":  "n/a",
+    "description":  "Science is no longer represented by flasks of kool-aid. It is now raw data that is carried over cables and instead of being fed into a lab, it goes into supercomputers.",
+    "dependencies":  [
+                         "base >= 1.0.0"
+                     ]
+}

@@ -9,7 +9,7 @@ data:extend(
       {"copper-plate", 1},
       {"iron-gear-wheel", 1}
     },
-    result = "automation-science-data"
+    result = "signal-1-data"
   },
   {
     type = "recipe",
