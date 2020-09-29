@@ -1,3 +1,4 @@
-require("prototypes.lab")
-require("prototypes.science-data")
-require("prototypes.signal")
+require("prototypes.entities")
+require("prototypes.items")
+require("prototypes.recipes")
+require("prototypes.technologies")
