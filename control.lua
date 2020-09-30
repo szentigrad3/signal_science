@@ -1,30 +1,52 @@
 local function onTick()
+  if global.dynamic_assemblers ~= nil then
+    if not global.dynamic_assemblers[global.tickIndex] then
+      global.tickIndex = nil
+    end
 
+    local data
+    global.tickIndex,data = next(global.dynamic_assemblers,global.tickIndex)
+       
 networks = {
   {
     inputs = {
       {
-        entity = <the entity representing the connection>,
-        buffer = <the amount/type of data available for transmission>,
+        entity = global.dynamic_assemblers,
+        buffer = dummysciencepack <the amount/type of data available for transmission>,
       },
       ...
     },
     outputs = {
       {
-        entity = <the entity representing the connection>,
-        buffer = <the amount/type of data received and available for further consumption>,
+        entity = global.super-computer,
+        buffer = dummysciencepack <the amount/type of data received and available for further consumption>,
       },
       ...
     },
   },
-  ...
+          data.control.parameters = params
+
+      elseif data.assembler.valid and data.combinator.valid then
+        data.control = data.combinator.get_or_create_control_behavior()
+        global.dynamic_assemblers[index] = data
+      else
+        -- delete whatever's left
+        if data.assembler and data.assembler.valid then
+          data.assembler.destroy()
+        end
+        if data.combinator and data.combinator.valid then
+          data.combinator.destroy()
+        end
+        table.remove(global.dynamic_assemblers, global.tickIndex)
 }
 end
+
 
 local dynamic_assembler_types = {
   ['assembling-machine-dynamic-1']=true,
   ['assembling-machine-dynamic-2']=true,
   ['assembling-machine-dynamic-3']=true,
+  ['super-computer']=true,
 }
 
 local function onBuilt(event)
@@ -64,8 +86,6 @@ local function onBuilt(event)
 end
 
 
-script.on_event(defines.events.on_tick, onTick)
+--script.on_event(defines.events.on_tick, onTick)
 script.on_event(defines.events.on_built_entity, onBuilt)
 script.on_event(defines.events.on_robot_built_entity, onBuilt)
-
-

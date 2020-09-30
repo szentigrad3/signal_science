@@ -1,3 +1,14 @@
+for index, tech in pairs(data.raw.technology) do
+local amountb = 0
+for indexs, ingred in pairs(tech.unit.ingredients) do
+local a = ingred.amount or ingred[2]
+amountb = amountb + a
+end
+amountb = amountb / 100
+if(amountb < 1) then
+amountb = 1
+end
+tech.unit.ingredients = {{type="item", name="dummysciencepack", amount=amountb}}
 data:extend{
   {
     type = "technology",
@@ -14,7 +25,7 @@ data:extend{
     unit =
     {
       count = 50,
-      ingredients = {{"automation-science-pack", 1}, {"logistic-science-pack", 1}},
+      ingredients = {"dummysciencepack", amountb},
       time = 30
     },
     order = "a-b-c"
@@ -34,7 +45,7 @@ data:extend{
     unit =
     {
       count = 50,
-      ingredients = {{"automation-science-pack", 1}, {"logistic-science-pack", 1}},
+      ingredients = {"dummysciencepack", amountb},
       time = 30
     },
     order = "a-b-c"
@@ -54,9 +65,10 @@ data:extend{
     unit =
     {
       count = 50,
-      ingredients = {{"automation-science-pack", 1}, {"logistic-science-pack", 1}, {"chemical-science-pack", 1}},
+      ingredients = {"dummysciencepack", amountb},
       time = 30
     },
     order = "a-b-c"
   },
 }
+end

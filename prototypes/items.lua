@@ -1,4 +1,5 @@
-data:extend{
+data:extend(
+{
   {
     type = "item",
     name = "assembling-machine-dynamic-1",
@@ -29,4 +30,18 @@ data:extend{
     place_result = "assembling-machine-dynamic-3",
     stack_size = 50
   },
-  }
+  {
+    type = "tool",
+    name = "dummysciencepack",
+    icon = "__base__/graphics/icons/big-worm-corpse.png",
+	icon_size = 64, icon_mipmaps = 4,
+    flags = {},
+    subgroup = "science-pack",
+    order = "g",
+    stack_size = 200,
+    durability = 1,
+    durability_description_key = "description.science-pack-remaining-amount-key",
+    durability_description_value = "description.science-pack-remaining-amount-value"
+  },
+})
+ 
