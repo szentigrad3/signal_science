@@ -9,7 +9,7 @@ if(amountb < 1) then
 amountb = 1
 end
 tech.unit.ingredients = {{type="item", name="dummysciencepack", amount=amountb}}
-data:extend{
+--[[data:extend{
   {
     type = "technology",
     name = "assembling-machine-dynamic-1",
@@ -70,5 +70,5 @@ data:extend{
     },
     order = "a-b-c"
   },
-}
+}]]--
 end
